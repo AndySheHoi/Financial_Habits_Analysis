@@ -22,7 +22,7 @@ class EDA:
         df = df.drop(columns = ['credit_score', 'rewards_earned'])
         
         
-        ## Histograms
+        # Histograms
         df2 = df.drop(columns = ['user', 'churn'])
         fig = plt.figure(figsize=(15, 12))
         plt.suptitle('Histograms of Numerical Columns', fontsize=20)
@@ -38,7 +38,7 @@ class EDA:
         plt.tight_layout(rect=[0, 0.03, 1, 0.95])
         
         
-        ## Pie Plots
+        # Pie Plots
         df2 = df[['housing', 'is_referred', 'app_downloaded',
                             'web_user', 'app_web_user', 'ios_user',
                             'android_user', 'registered_phones', 'payment_type',
@@ -58,25 +58,9 @@ class EDA:
             plt.pie(values, labels = index, autopct='%1.1f%%')
             plt.axis('equal')
         fig.tight_layout(rect=[0, 0.03, 1, 0.95])
+    
         
-        
-        ## Exploring Uneven Features
-        df[df2.waiting_4_loan == 1].churn.value_counts()
-        df[df2.cancelled_loan == 1].churn.value_counts()
-        df[df2.received_loan == 1].churn.value_counts()
-        df[df2.rejected_loan == 1].churn.value_counts()
-        df[df2.left_for_one_month == 1].churn.value_counts()
-        
-        
-        ## Correlation with Response Variable
-        df2.drop(columns = ['housing', 'payment_type',
-                                 'registered_phones', 'zodiac_sign']
-            ).corrwith(df.churn).plot.bar(figsize=(20,10),
-                      title = 'Correlation with Response variable',
-                      fontsize = 15, rot = 45,
-                      grid = True)
-        
-        ## Correlation Matrix
+        # Correlation Matrix
         sn.set(style="white")
         
         # Compute the correlation matrix
