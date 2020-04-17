@@ -133,7 +133,7 @@ print("Test Set Accuracy: %0.4f" % accuracy_score(y_test, y_pred))
 accuracies = cross_val_score(estimator = model,
                              X = X_train[X_train.columns[rfe.support_]],
                              y = y_train, cv = 10)
-print("K-Fold Accuracy: %0.4f (+/- %0.4f)" % (accuracies.mean(), accuracies.std()))
+print("K-Fold Accuracy: %0.4f (+/- %0.4f)" % (accuracies.mean(), accuracies.std()*2))
 
 # Analyzing Coefficients
 pd.concat([pd.DataFrame(X_train[X_train.columns[rfe.support_]].columns, columns = ["features"]),
