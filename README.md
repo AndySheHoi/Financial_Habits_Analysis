@@ -3,7 +3,6 @@ Minimizing the churn rate through analysis of financial habits
 
 The model measures features that indicate disengagement with the product, and not the exact timeframe in which users will disengage.
 
-
 ***To run the program, download all CSV files and then execute Model.py directly***
 ----
 
